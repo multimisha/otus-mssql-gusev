@@ -1,4 +1,4 @@
-/*
+﻿/*
 Домашнее задание по курсу MS SQL Server Developer в OTUS.
 Занятие "02 - Оператор SELECT и простые фильтры, JOIN".
 
@@ -76,7 +76,8 @@ S.CustomerName
 from Sales.Orders O
 left join Sales.OrderLines OL on O.OrderID=OL.OrderID
 left join Sales.Customers S on O.CustomerID=S.CustomerID
-where UnitPrice>100 or Quantity > 20 order by Квартал, [Треть года], O.OrderDate
+where UnitPrice>100 or Quantity > 20 and O.PickingCompletedWhen is not null
+order by Квартал, [Треть года], O.OrderDate 
 OffSet 1000 Rows
 Fetch Next 100 rows ONLY
 
